@@ -1,0 +1,189 @@
+Started by user svc.CD_AEDC
+[EnvInject] - Loading node environment variables.
+Building remotely on cu163_Java (MYCA Java CTT) in workspace /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository ssh://stash.aexp.com/epaas/jboss-sample-app.git
+ > git init /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA # timeout=10
+Fetching upstream changes from ssh://stash.aexp.com/epaas/jboss-sample-app.git
+ > git --version # timeout=10
+ > git fetch --tags --progress ssh://stash.aexp.com/epaas/jboss-sample-app.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url ssh://stash.aexp.com/epaas/jboss-sample-app.git # timeout=10
+ > git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url ssh://stash.aexp.com/epaas/jboss-sample-app.git # timeout=10
+Cleaning workspace
+ > git rev-parse --verify HEAD # timeout=10
+No valid HEAD. Skipping the resetting
+ > git clean -fdx # timeout=10
+Fetching upstream changes from ssh://stash.aexp.com/epaas/jboss-sample-app.git
+ > git fetch --tags --progress ssh://stash.aexp.com/epaas/jboss-sample-app.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse origin/rohit_deployA^{commit} # timeout=10
+Checking out Revision 033272ff0a5105a32dbf216899ccdc5ec2faac50 (origin/rohit_deployA)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 033272ff0a5105a32dbf216899ccdc5ec2faac50 # timeout=10
+ > git branch -a # timeout=10
+ > git rev-parse remotes/origin/ashwini-test-never-merge-this^{commit} # timeout=10
+ > git rev-parse remotes/origin/james_jboss^{commit} # timeout=10
+ > git rev-parse remotes/origin/kyang13_artemis_app^{commit} # timeout=10
+ > git rev-parse remotes/origin/master^{commit} # timeout=10
+ > git rev-parse remotes/origin/metrics^{commit} # timeout=10
+ > git rev-parse remotes/origin/mikes_2xssl_improvements^{commit} # timeout=10
+ > git rev-parse remotes/origin/mikes_branch^{commit} # timeout=10
+ > git rev-parse remotes/origin/modules^{commit} # timeout=10
+ > git rev-parse remotes/origin/multi_host^{commit} # timeout=10
+ > git rev-parse remotes/origin/proxy_test^{commit} # timeout=10
+ > git rev-parse remotes/origin/release^{commit} # timeout=10
+ > git rev-parse remotes/origin/rohit_deployA^{commit} # timeout=10
+ > git rev-parse remotes/origin/rohit_deployB^{commit} # timeout=10
+ > git rev-parse remotes/origin/rohit_deployC^{commit} # timeout=10
+ > git rev-parse remotes/origin/rrc^{commit} # timeout=10
+ > git rev-parse remotes/origin/smruthi^{commit} # timeout=10
+ > git rev-parse remotes/origin/stickysession^{commit} # timeout=10
+ > git rev-parse remotes/origin/ylu19_test^{commit} # timeout=10
+ > git checkout -b rohit_deployA 033272ff0a5105a32dbf216899ccdc5ec2faac50
+ > git rev-list 033272ff0a5105a32dbf216899ccdc5ec2faac50 # timeout=10
+[jboss-deployA] $ /bin/sh -xe /tmp/hudson4609359736233083669.sh
++ set +x
+[jboss-deployA] $ /bin/sh -xe /tmp/hudson7551852100073505138.sh
++ set +x
+
+-------------------------------------------------------
+ B U I L D  E N V I R O N M E N T
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 08:22:22-0700)
+Maven home: /usr/local/maven-3.1.1
+Java version: 1.8.0_65, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.65-0.b17.el6_7.x86_64/jre
+Default locale: en_US, platform encoding: ISO-8859-1
+OS name: "linux", version: "2.6.32-279.el6.x86_64", arch: "amd64", family: "unix"
+
+-------------------------------------------------------
+ M A V E N  C O M M A N D
+-------------------------------------------------------
+mvn -B -f pom.xml clean deploy
+
+-------------------------------------------------------
+ O U T P U T
+-------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building testjboss 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] Downloading: http://repo.aedc.extra.aexp.com/nexus/content/groups/prod/org/jboss/spec/javax/el/jboss-el-api_2.2_spec/1.0.1.Final/jboss-el-api_2.2_spec-1.0.1.Final.pom
+[WARNING] The POM for org.jboss.spec.javax.el:jboss-el-api_2.2_spec:jar:1.0.1.Final is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ testjboss ---
+[INFO] 
+[INFO] --- cobertura-maven-plugin:2.5.1:clean (default) @ testjboss ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ testjboss ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ testjboss ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/classes
+[INFO] /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/src/main/java/test/services/servlet/ArtemisMQServlet.java: /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/src/main/java/test/services/servlet/ArtemisMQServlet.java uses unchecked or unsafe operations.
+[INFO] /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/src/main/java/test/services/servlet/ArtemisMQServlet.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ testjboss ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:testCompile (default-testCompile) @ testjboss ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (default-test) @ testjboss ---
+[INFO] No tests to run.
+[INFO] Surefire report directory: /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.1.1:war (default-war) @ testjboss ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [testjboss] in [/build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/testjboss-1.0]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/src/main/webapp]
+[INFO] Webapp assembled in [694 msecs]
+[INFO] Building war: /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/deployments/ROOT.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (copy-war) @ testjboss ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:copy-resources (copy-config) @ testjboss ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.4:single (dist) @ testjboss ---
+[INFO] Reading assembly descriptor: /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/assembly.xml
+[INFO] Building tar: /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/testjboss-1.0-bin.tar.gz
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ testjboss ---
+[INFO] Installing deployments/ROOT.war to /build-nas/jenkins/jenkins163/.m2/repository/testjboss/testjboss/1.0/testjboss-1.0.war
+[INFO] Installing /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/pom.xml to /build-nas/jenkins/jenkins163/.m2/repository/testjboss/testjboss/1.0/testjboss-1.0.pom
+[INFO] Installing /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/testjboss-1.0-bin.tar.gz to /build-nas/jenkins/jenkins163/.m2/repository/testjboss/testjboss/1.0/testjboss-1.0-bin.tar.gz
+[INFO] 
+[INFO] --- nexus-staging-maven-plugin:1.6.5:deploy (injected-nexus-deploy) @ testjboss ---
+[INFO] Performing local staging (local stagingDirectory="/build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/nexus-staging/staging")...
+[INFO]  + Using server credentials "staging" from Maven settings.
+[INFO]  * Connected to Nexus at https://repo.aedc.extra.aexp.com:443/nexus/, is version 2.12.0-01 and edition "Professional"
+[INFO]  * Using staging profile ID "795bf64486cfcf" (configured by user).
+[INFO] Installing deployments/ROOT.war to /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/nexus-staging/staging/795bf64486cfcf/testjboss/testjboss/1.0/testjboss-1.0.war
+[INFO] Installing /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/pom.xml to /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/nexus-staging/staging/795bf64486cfcf/testjboss/testjboss/1.0/testjboss-1.0.pom
+[INFO] Installing /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/testjboss-1.0-bin.tar.gz to /build-nas/jenkins/jenkins163/workspace/java-architecture/ePaaS/jboss-deployA/target/nexus-staging/staging/795bf64486cfcf/testjboss/testjboss/1.0/testjboss-1.0-bin.tar.gz
+[INFO] Performing remote staging...
+[INFO] 
+[INFO]  * Remote staging into staging profile ID "795bf64486cfcf"
+[INFO]  * Created staging repository with ID "build-37572", applied tags: {javaVersion=1.8.0_65, localUsername=jenkins}
+[INFO]  * Staging repository at https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572
+[INFO]  * Uploading locally staged artifacts to profile build
+[INFO] Uploading: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/1.0/testjboss-1.0.war
+[INFO] Uploaded: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/1.0/testjboss-1.0.war (9099 KB at 3447.9 KB/sec)
+[INFO] Uploading: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/1.0/testjboss-1.0.pom
+[INFO] Uploaded: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/1.0/testjboss-1.0.pom (8 KB at 24.5 KB/sec)
+[INFO] Downloading: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/maven-metadata.xml
+[INFO] Uploading: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/maven-metadata.xml
+[INFO] Uploaded: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/maven-metadata.xml (294 B at 1.1 KB/sec)
+[INFO] Uploading: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/1.0/testjboss-1.0-bin.tar.gz
+[INFO] Uploaded: https://repo.aedc.extra.aexp.com:443/nexus/service/local/staging/deployByRepositoryId/build-37572/testjboss/testjboss/1.0/testjboss-1.0-bin.tar.gz (9105 KB at 5481.3 KB/sec)
+[INFO]  * Upload of locally staged artifacts finished.
+[INFO]  * Closing staging repository with ID "build-37572".
+
+Waiting for operation to complete...
+......
+
+[INFO] Remote staged 1 repositories, finished with success.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 58.970s
+[INFO] Finished at: Sun Oct 16 12:22:23 PDT 2016
+[INFO] Final Memory: 36M/365M
+[INFO] ------------------------------------------------------------------------
+[jboss-deployA] $ /bin/sh -xe /tmp/hudson7248401886480056083.sh
++ set +x
+[jboss-deployA] $ /bin/sh -xe /tmp/hudson1350030033340679819.sh
++ set +x
+-------------------------------------------------------
+ I N J E C T   P R O P E R T I E S
+-------------------------------------------------------
+[EnvInject] - Injecting environment variables from a build step.
+[EnvInject] - Injecting as environment variables the properties file path 'jenkins_props'
+[EnvInject] - Variables injected successfully.
+Finished: SUCCESS
+

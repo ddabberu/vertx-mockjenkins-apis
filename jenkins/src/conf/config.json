@@ -1,0 +1,23 @@
+{
+  "http.port": 35113,
+  "jobs": [
+    {
+      "name": "job1",
+      "delay":60000,
+      "type":"java"
+    },
+    {
+      "name": "job2",
+      "delay":120000,
+      "type":"java"
+    },
+    {
+      "name": "job3",
+      "delay":300000,
+      "type":"node"
+    }   
+  ],
+
+  "statusCheck":"BlahStatus",
+  "console":"BlahConsole"
+}
